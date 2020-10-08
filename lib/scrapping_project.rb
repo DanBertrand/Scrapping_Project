@@ -14,12 +14,14 @@ doc = Nokogiri::HTML(URI.open("https://coinmarketcap.com/all/views/all/"))
 
 
 
-array_name = doc.css("tbody tr.cmc-table-row td.cmc-table__cell.cmc-table__cell--sortable.cmc-table__cell--left.cmc-table__cell--sort-by__symbol div")
-puts array_name.text
+doc.css("tbody tr.cmc-table-row td.cmc-table__cell.cmc-table__cell--sortable.cmc-table__cell--left.cmc-table__cell--sort-by__symbol div").each do |el|
+	puts el.text
+end
 
 
-array_price = doc.css("tbody tr.cmc-table-row td.cmc-table__cell.cmc-table__cell--sortable.cmc-table__cell--right.cmc-table__cell--sort-by__price a.cmc-link")
-puts array2.text
+array_price = doc.css("tbody tr.cmc-table-row td.cmc-table__cell.cmc-table__cell--sortable.cmc-table__cell--right.cmc-table__cell--sort-by__price a.cmc-link").each do |el|
+	puts el.text
+end
 	
 
 
